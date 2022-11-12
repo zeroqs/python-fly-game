@@ -17,20 +17,20 @@ class Jet:
 
     def move(self, keys):
         # nightmare
-        if keys[pygame.K_LEFT] and keys[pygame.K_DOWN] :
+        if keys[pygame.K_LEFT] and keys[pygame.K_DOWN] and (self.x > 0 and self.y <= self.end_height):
             self.x -= 6.07
             self.y += 6.07
-        elif keys[pygame.K_LEFT] and keys[pygame.K_UP]:
+        elif keys[pygame.K_LEFT] and keys[pygame.K_UP] and (self.x > 0 and self.y > 0):
             self.x -= 6.07
             self.y -= 6.07
-        elif keys[pygame.K_RIGHT] and keys[pygame.K_DOWN]:
+        elif keys[pygame.K_RIGHT] and keys[pygame.K_DOWN] and (self.x <= self.end_width and self.y <= self.end_height):
             self.x += 6.07
             self.y += 6.07
-        elif keys[pygame.K_RIGHT] and keys[pygame.K_UP]:
+        elif keys[pygame.K_RIGHT] and keys[pygame.K_UP] and (self.x <= self.end_width and self.y > 0):
             self.x += 6.07
             self.y -= 6.07
         if keys[pygame.K_LEFT] and self.x > 0:
-                self.x -= 15.005
+            self.x -= 15.005
         elif keys[pygame.K_RIGHT] and self.x <= self.end_width:
             self.x += 15.005
         elif keys[pygame.K_UP] and self.y > 0:
