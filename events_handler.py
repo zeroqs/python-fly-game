@@ -21,3 +21,11 @@ def refresh_screen(bullets):
     jet.draw()
     pygame.display.flip()
     screen.fill((0, 0, 0))
+
+
+def clear_bullets(bullets):
+    bullets.update()
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
+    print(len(bullets))

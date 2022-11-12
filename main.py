@@ -10,6 +10,7 @@ def run():
         events_handler(bullets)
         bullets.update()
         refresh_screen(bullets)
+        clear_bullets(bullets)
         pygame.time.Clock().tick(30)
 
 
